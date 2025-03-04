@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMATS Transport</title>
+    
+    <link rel="stylesheet" href="style.css"> <!-- Ensure style.css exists -->
+    
+    <style>
+        .form-element-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .input-field {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        .buttonImage {
+            width: 25px;
+            height: 25px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .page-loader {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            background: #fff;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .page-loader h3 {
+            color: #418bed;
+            font-size: 40px;
+            font-family: "Markazi Text", serif;
+            margin-top: 20px;
+        }
+
+        .blink_me {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body onload="hideLoader()" style="background: #fff;">
+    <!-- Preloader -->
+    <div class="page-loader" id="loader">
+        <img src="logo-all.png" class="loader-logo" alt="Loading Logo">
+        <h3>SIMATS TRANSPORT</h3>
+        Loading <span class="blink_me">...</span>
+    </div>
+
+    <div class="log-header">
+        <h1>SIMATS TRANSPORT</h1>
+    </div>
+
+    <div class="login-sec">
+        <div class="login-container">
+            <div class="mb-3 mt-2">
+                <img src="logo-all.png" alt="Logo" height="100" width="100">
+            </div>
+            <div class="login-header">Login</div>
+
+            <form id="loginForm" class="log-input" action="your-server-endpoint" method="POST"> <!-- Add action and method -->
+                <!-- User ID Input -->
+                <div class="form-element-container">
+                    <label for="registerNumber">Enter Staff ID / Student ID</label>
+                    <input type="text" id="registerNumber" name="registerNumber" class="input-field" autocomplete="off" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="form-element-container">
+                    <label for="pass">Enter Password</label>
+                    <input type="password" id="pass" name="pass" class="input-field" autocomplete="off" required>
+                </div>
+
+                <br>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-button mb-3">
+                    <img class="buttonImage" src="key.png" alt="Login Icon"> Login
+                </button>
+            </form>
+
+            <!-- Signup Link -->
+            <div class="signup-link">
+                <p>Do not have an account? <a href="transport_signup.html">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="user-footer">
+        <p class="mb-0">&copy; SIMATS - 2024</p>
+    </div>
+
+    <script src="login.js"></script> <!-- Ensure login.js exists -->
+    
+    <script>
+        function hideLoader() {
+            document.getElementById('loader').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
